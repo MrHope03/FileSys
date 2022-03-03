@@ -1,7 +1,7 @@
 # FileSys
 => basic functionalities
-    add, remove files and directories
-    move through directories (basic linux cmd)   
+    - add, remove files and directories
+    - move through directories (basic linux cmd)   
 
 # to run code
   - go to src
