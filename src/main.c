@@ -5,16 +5,15 @@ extern Stack *sysStack;
 
 int main(int argc, char **argv) {
   if (argc != 2) {
-    fprintf(stderr, "Usage: note <project-name>");
+    fprintf(stderr, "Usage: takenote <project-name>");
     exit(1);
   }
   initialiseFileSystem(argv[1]);
-  sysNode *curr = peek(sysStack);
 
   size_t size = 25;
   char *cmdLine = (char *)malloc(size);
 
-  prompt(curr);
+  prompt();
   while (getline(&cmdLine, &size, stdin)) {
     char *cmd = strtok(cmdLine, " ");
     strip(cmd, '\n');
@@ -63,7 +62,7 @@ int main(int argc, char **argv) {
     } else {
       printf("Error - Unknown command\n");
     }
-    prompt(curr);
+    prompt();
     cmd = NULL;
   }
   shutdownFileSystem(argv[1]);

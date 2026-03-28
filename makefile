@@ -1,7 +1,7 @@
 files := $(wildcard ./src/*.c)
 
 compile: $(files)
-	gcc -o run $^ -g
+	gcc -o takenote $^ -g
 
 run: compile
 	./run test
